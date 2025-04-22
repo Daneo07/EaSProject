@@ -19,6 +19,7 @@ body{
 .game{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 800px;
     height: 800px;
     background-color: aqua;
