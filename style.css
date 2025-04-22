@@ -1,0 +1,32 @@
+html{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    height: 800px;
+    background-color: aqua;
+
+}
+
+
+
+h1{
+    color: grey;
+}
