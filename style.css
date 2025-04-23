@@ -19,15 +19,21 @@ body{
 .game{
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 800px;
     height: 800px;
     background-color: aqua;
 
 }
 
-
-
-h1{
-    color: grey;
+.column, .row{
+width: 25px;
+height: 25px;
 }
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+
+
