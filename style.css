@@ -21,7 +21,7 @@ body{
     justify-content: center;
     width: 800px;
     height: 800px;
-    background-color: aqua;
+   
 
 }
 
@@ -34,6 +34,19 @@ height: 25px;
     display: flex;
     justify-content: center;
 }
+
+
+
+.row:hover{
+    background-color: aqua;
+}
+
+.color-selector{
+    display: flex;
+    gap: 10px;
+}
+
+
 
 
 
