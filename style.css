@@ -37,9 +37,7 @@ height: 25px;
 
 
 
-.row:hover{
-    background-color: aqua;
-}
+
 
 .color-selector{
     display: flex;

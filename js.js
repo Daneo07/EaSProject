@@ -1,4 +1,6 @@
 
+
+
 //function creates grid
 const mkGrid = function(size){
     const gameScreen = document.querySelector('.game');
@@ -14,36 +16,38 @@ const mkGrid = function(size){
 
         }
         gameScreen.appendChild(column);
+
     }
 }
 
 
 mkGrid(16);
 
-console.log('hello')
-
-const tets = document.querySelector('row');
 
 
-
-//Selecting the divs
-const test = document.getElementsByClassName('row');
-const other = document.getElementsByClassName('column')
-
-function mouseOver() {
-    document.getElementsByClassName("row").style.color = "red";
-  }
-  
-  function mouseOut() {
-    document.getElementById("row").style.color = "black";
-  }
+let tets = document.getElementsByClassName('row')
 
 
 
 
 
+function addHoverEffect(obj){
+Object.keys(obj).forEach(a=>{
+    tets[a].addEventListener('mouseenter',function(e){
+        e.target.style.backgroundColor = "red"
+    });
+});
+}
 
-console.log(test);
+addHoverEffect(tets);
+
+
+Object.keys(tets).forEach(a=>{
+    tets[a].addEventListener('mouseleave', function(e){
+        e.target.style.backgroundColor = ''
+    })
+})
+
 
 
 
