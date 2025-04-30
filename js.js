@@ -1,18 +1,22 @@
 
 
+let sizeTest = 22
+let color = 'black';
 
 //function creates grid
-const mkGrid = function(size){
+const mkGrid = function(sizeTest){
     const gameScreen = document.querySelector('.game');
-    for(i=0;i < size; i++){
+    gameScreen.innerHTML = ''
+    for(let i=0;i < sizeTest; i++){
         const column = document.createElement('div');
         column.classList.add('column');
-        for(j=0;j<= size; j++){
+        for(let j=0;j<= sizeTest; j++){
             const row = document.createElement('div')
             row.classList.add('row');
             row.style.border = '2px solid black'
            
             column.appendChild(row)
+            row.addEventListener('mouseover',colorSquare)
 
         }
         gameScreen.appendChild(column);
@@ -21,9 +25,73 @@ const mkGrid = function(size){
 }
 
 
-mkGrid(16);
+
+function colorSquare() {
+    color === "random" ? this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)` : this.style.backgroundColor = color;
+  }
 
 
+//3rd Attempt Grid size
+let username;
+document.getElementById('mySubmit').onclick = function () {
+    let username = document.getElementById('result').value;
+    let sizeTest = Number(username);
+    console.log(sizeTest)  
+    mkGrid(sizeTest) 
+    
+}
+
+
+
+mkGrid(sizeTest);
+console.log(mkGrid(sizeTest));
+
+
+
+
+
+/*ReAttempt of Grid Size
+const btn = document.querySelector('.btn');
+let result = '';
+
+
+
+window.onload=function getValue(e){
+    const parent = e.target.closest('label');
+    
+    const input = parent.querySelector('input');
+ 
+    const inputValue = input.value;
+    
+    let result = inputValue;
+    
+}
+
+
+
+btn.addEventListener('click', getValue, false);
+*/
+
+
+
+
+
+
+
+
+
+/*Adding Button to adjust size of grid
+function doIt(){
+    let x = document.getElementById('result').value;
+    let newGrid = mkGrid(x);
+    document.getElementById(newGrid).value = newGrid
+
+}
+*/
+
+
+
+//Adding the pen effect
 
 let tets = document.getElementsByClassName('row')
 
@@ -32,19 +100,20 @@ let tets = document.getElementsByClassName('row')
 
 
 function addHoverEffect(obj){
-Object.keys(obj).forEach(a=>{
-    tets[a].addEventListener('mouseenter',function(e){
-        e.target.style.backgroundColor = "red"
-    });
-});
-}
+        Object.keys(obj).forEach(a=>{
+            tets[a].addEventListener('mouseenter',function(e){
+                e.target.style.backgroundColor = "red"
+            });
+    })
+};
+
 
 addHoverEffect(tets);
 
 
 Object.keys(tets).forEach(a=>{
     tets[a].addEventListener('mouseleave', function(e){
-        e.target.style.backgroundColor = ''
+        e.target.style.color = ''
     })
 })
 
@@ -52,26 +121,4 @@ Object.keys(tets).forEach(a=>{
 
 
 
-
-/*
-//Function to create grid
-function createGrid(){
-    mkRow(16);
-    mkColumns(16);
-}
-
-//Create Columns
-function mkColumns(numCols){
-    for(i=0;i<numCols;i++){
-        let col = document.createElement('div')
-        col.classList.add('column');
-    }
-}
-
-//Create Rows
-function mkRow(numRows){
-    let row = document.createElement('div')
-    row.classList.add('row')
-}
-    */
 

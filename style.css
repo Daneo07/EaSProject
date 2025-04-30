@@ -42,7 +42,10 @@ height: 25px;
 .color-selector{
     display: flex;
     gap: 10px;
+    margin-top: 10px;
 }
+
+
 
 
 
