@@ -35,10 +35,14 @@ function colorSquare() {
 let username;
 document.getElementById('mySubmit').onclick = function () {
     let username = document.getElementById('result').value;
-    let sizeTest = Number(username);
+   let sizeTest = Number(username);
     console.log(sizeTest)  
+    if(sizeTest >60){
+        alert('Cant exceed 60')
+        mkGrid(22)
+    } else{
     mkGrid(sizeTest) 
-    
+    }
 }
 
 
@@ -91,31 +95,7 @@ function doIt(){
 
 
 
-//Adding the pen effect
 
-let tets = document.getElementsByClassName('row')
-
-
-
-
-
-function addHoverEffect(obj){
-        Object.keys(obj).forEach(a=>{
-            tets[a].addEventListener('mouseenter',function(e){
-                e.target.style.backgroundColor = "red"
-            });
-    })
-};
-
-
-addHoverEffect(tets);
-
-
-Object.keys(tets).forEach(a=>{
-    tets[a].addEventListener('mouseleave', function(e){
-        e.target.style.color = ''
-    })
-})
 
 
 
